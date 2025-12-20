@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ngăn scroll toàn trang để dùng scroll của main */
+  background-color: #0d0d0d;
+}
+
+/* Chống bôi đen toàn trang ở cấp độ CSS thấp nhất */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
