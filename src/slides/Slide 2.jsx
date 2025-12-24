@@ -64,12 +64,12 @@ const Slide2 = () => {
           style={{
             display: 'flex',
             alignItems: 'center', 
-            position: 'relative', // Quan trọng để định vị đường kẻ
+            position: 'relative',
             paddingBottom: '40px',
             minHeight: '200px'
           }}
         >
-          {/* ĐƯỜNG KẺ NGANG (PROGRESS BAR) - Chỉ xuất hiện ở mục đầu tiên */}
+
           {idx === 0 && (
             <motion.div
               initial={{ width: 0 }}
@@ -86,7 +86,6 @@ const Slide2 = () => {
             />
           )}
 
-          {/* CỘT BÊN TRÁI: TIÊU ĐỀ */}
           <div style={{ 
             flex: '0 0 30%',
             textAlign: 'right',
@@ -112,17 +111,15 @@ const Slide2 = () => {
             </motion.h2>
           </div>
 
-          {/* CỘT BÊN PHẢI: CHI TIẾT */}
           <div style={{ 
             flex: '1', 
             display: 'flex', 
             flexDirection: 'column', 
             gap: '20px',
-            position: 'relative', // Để định vị đường kẻ dọc nội bộ
+            position: 'relative',
             paddingLeft: '40px'
           }}>
             
-            {/* ĐƯỜNG KẺ DỌC (PROGRESS BAR DỌC) */}
             <motion.div
               initial={{ height: 0 }}
               whileInView={{ height: '100%' }}

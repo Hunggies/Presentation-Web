@@ -5,11 +5,13 @@ import DarkVeil from './backgrounds/darkveil.jsx';
 import Slide_1 from './slides/Slide 1';
 import Slide_2 from './slides/Slide 2';
 import Slide_3 from './slides/Slide 3';
+import Slide_4 from './slides/Slide 4';
 
 const slides = [
   { component: Slide_1, label: 'Mở Đầu' },
   { component: Slide_2, label: 'Tự Đánh Giá' },
   { component: Slide_3, label: 'Mục Tiêu' },
+  { component: Slide_4, label: 'Kết Luận' },
 ];
 
 function App() {
@@ -32,14 +34,11 @@ function App() {
   const handleScroll = (e) => {
     const container = e.target;
     
-    // CẬP NHẬT PROGRESS BAR (Luôn chạy để thanh dưới cùng mượt)
     const totalScrollable = container.scrollHeight - container.clientHeight;
     if (totalScrollable > 0) {
       setScrollProgress((container.scrollTop / totalScrollable) * 100);
     }
 
-    // CHỈ CẬP NHẬT ACTIVE INDEX KHI NGƯỜI DÙNG TỰ CUỘN (CHẾ ĐỘ RẢNH TAY)
-    // Nếu đang chạy scrollToSlide (isScrollingRef.current === true), chúng ta bỏ qua việc setIdx ở đây
     if (!isScrollingRef.current) {
       const newIndex = Math.round(container.scrollTop / container.clientHeight);
       if (newIndex !== activeIdx && !isNaN(newIndex)) {
@@ -51,12 +50,10 @@ function App() {
   const scrollToSlide = (i) => {
     if (i < 0 || i >= totalSlides || !scrollContainerRef.current) return;
     
-    // Hủy các animation cũ nếu có
     if (timeoutRef.current) cancelAnimationFrame(timeoutRef.current);
-    
-    // Khóa handleScroll lại để không tranh giành quyền set activeIdx
+
     isScrollingRef.current = true; 
-    setActiveIdx(i); // Nhảy thanh Active trên Sidebar ngay lập tức đến đích
+    setActiveIdx(i);
 
     const container = scrollContainerRef.current;
     const targetY = i * container.clientHeight;
@@ -77,8 +74,6 @@ function App() {
       if (timeElapsed < duration) {
         timeoutRef.current = requestAnimationFrame(animateScroll);
       } else {
-        // Sau khi cuộn xong, mở khóa để handleScroll có thể hoạt động lại khi người dùng dùng chuột
-        // Dùng một khoảng delay nhỏ để đảm bảo trình duyệt đã ổn định vị trí
         setTimeout(() => {
           isScrollingRef.current = false;
         }, 50);
@@ -94,9 +89,9 @@ function App() {
       backgroundColor: '#0d0d0d', color: '#e0e0e0',
       overflow: 'hidden', position: 'relative', userSelect: 'none'
     }}>
-         <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
-            <DarkVeil />
-         </div>
+        <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
+          <DarkVeil />
+        </div>
 
       <motion.nav
         onMouseEnter={() => setIsHovered(true)}
@@ -145,7 +140,7 @@ function App() {
               >
                 <div style={{ 
                   height: '100%', 
-                  backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.12)'
                 }} />
               </motion.div>
             )}

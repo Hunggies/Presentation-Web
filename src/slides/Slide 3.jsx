@@ -51,7 +51,7 @@ const Slide3 = () => {
         cursor: 'context-menu'
       }}
     >
-      {/* PHẦN 1: MỤC TIÊU & ƯỚC MƠ */}
+
       <motion.div layout style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
         <div style={{ fontSize: '18px', display: 'flex', gap: '15px' }}>
           <TypewriterText text="[Mục Tiêu]" color="#00d8ff" delay={0.1} />
@@ -63,7 +63,6 @@ const Slide3 = () => {
         </div>
       </motion.div>
 
-      {/* PHẦN 2: Ô "➜" (CLICK 1) */}
       <motion.div layout style={{ position: 'relative', alignSelf: 'flex-start', minHeight: '50px' }}>
         <AnimatePresence>
           {step >= 1 && (
@@ -94,9 +93,7 @@ const Slide3 = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* PHẦN 3: NGUYỆN VỌNG */}
       <div style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
-        {/* Nguyện vọng trong nước (CLICK 2) */}
         <div style={{ flex: 1 }}>
           <AnimatePresence>
             {step >= 2 && (
@@ -115,12 +112,12 @@ const Slide3 = () => {
                   {aspirations.map((item, i) => (
                     <motion.div 
                       key={i}
-                      initial={{ opacity: 0, x: -30 }} // Trượt từ trái sang
+                      initial={{ opacity: 0, x: -30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
                         duration: 0.4, 
-                        delay: i * 0.25 + 0.5, 
-                        ease: "easeOut" // Chuyển từ spring sang easeOut để hết nảy
+                        delay: i * 0.2 + 0.5, 
+                        ease: "easeOut"
                       }}
                       style={{ fontSize: '15px' }}
                     >
@@ -133,7 +130,6 @@ const Slide3 = () => {
           </AnimatePresence>
         </div>
 
-        {/* Nguyện vọng phụ (CLICK 3) */}
         <div style={{ flex: 0.8 }}>
           <AnimatePresence>
             {step >= 3 && (
