@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import TextType from '../slides/components/TextType';
 
 // Component đánh máy cơ học tốc độ cao
 const TypewriterText = ({ text, delay = 0, color = "#e0e0e0" }) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import DarkVeil from './backgrounds/darkveil.jsx';
+import Particles from './backgrounds/Particles';
 
 import Slide_1 from './slides/Slide 1';
 import Slide_2 from './slides/Slide 2';
@@ -8,9 +8,9 @@ import Slide_3 from './slides/Slide 3';
 import Slide_4 from './slides/Slide 4';
 
 const slides = [
-  { component: Slide_1, label: 'Mở Đầu' },
-  { component: Slide_2, label: 'Tự Đánh Giá' },
-  { component: Slide_3, label: 'Mục Tiêu' },
+  { component: Slide_1, label: 'MỞ ĐẦU' },
+  { component: Slide_2, label: 'GIỚI THIỆU' },
+  { component: Slide_3, label: 'CÁC NGUYỆN VỌNG' },
   { component: Slide_4, label: 'Kết Luận' },
 ];
 
@@ -86,11 +86,21 @@ function App() {
   return (
     <div style={{
       display: 'flex', height: '100vh', width: '100vw',
-      backgroundColor: '#0d0d0d', color: '#e0e0e0',
-      overflow: 'hidden', position: 'relative', userSelect: 'none'
+      backgroundColor: '#0a0a0a', color: '#e0e0e0',
+      overflow: 'hidden', position: 'fixed', userSelect: 'none'
     }}>
-        <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
-          <DarkVeil />
+        <div style={{ width: '100%', height: '100%', position: 'absolute' }}>
+          <Particles
+            particleColors={["#ffffff"]}
+            particleCount={400}
+            particleSpread={10}
+            speed={0.05}
+            particleBaseSize={70}
+            moveParticlesOnHover={false}
+            alphaParticles={false}
+            disableRotation={false}
+            pixelRatio={1}
+          />
         </div>
 
       <motion.nav
@@ -99,12 +109,12 @@ function App() {
           setIsHovered(false);
           setHoveredIdx(null);
         }}
-        animate={{ width: isHovered ? '180px' : '65px' }}
+        animate={{ width: isHovered ? '200px' : '65px' }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         style={{
           position: 'fixed', left: 0, top: 0, bottom: 0,
           borderRight: '1px solid rgba(255,255,255,0.05)',
-          backgroundColor: '#0f0f0f', zIndex: 100,
+          backgroundColor: 'rgba(18, 18, 18, 1)', zIndex: 100,
           display: 'flex', flexDirection: 'column',
         }}
       >
@@ -182,7 +192,43 @@ function App() {
           ))}
         </div>
       </motion.nav>
-
+      <div style={{ 
+        position: 'fixed', 
+        top: '40px', 
+        left: '100px',
+        zIndex: 150, 
+        pointerEvents: 'none' 
+      }}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeIdx}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}
+          >
+            <h1 style={{ 
+              margin: 0, 
+              fontFamily: 'monospace', 
+              fontSize: '15px', 
+              fontWeight: 'bold', 
+              color: '#555',
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              textShadow: '0 0 15px rgba(0, 216, 255, 0.3)'
+            }}>
+              {slides[activeIdx].label}
+            </h1>
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: '100%' }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              style={{ height: '2px', backgroundColor: '#555' }} 
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
       <main
         ref={scrollContainerRef}
         onScroll={handleScroll}
@@ -202,7 +248,7 @@ function App() {
       >
         <style>{`main::-webkit-scrollbar { display: none; }`}</style>
         {slides.map((Slide, i) => (
-          <section key={i} id={`slide-${i}`} style={{ height: '100vh', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <section key={i} id={`slide-${i}`} style={{ height: '100vh', width: '100%', display: 'flex' }}>
             <motion.div 
               whileInView={{ opacity: 1, y: 0 }} 
               viewport={{ once: false, amount: 0.2 }} 
