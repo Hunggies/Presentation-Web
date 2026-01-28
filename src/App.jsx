@@ -237,7 +237,7 @@ function App() {
                 animate={{ scaleX: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: "circOut" }}
                 style={{ 
-                  width: '100', height: '1px', background: '#fff', 
+                  width: '97.5%', height: '1px', background: '#fff', 
                   originX: 0.5 
                 }}
               />

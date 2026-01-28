@@ -14,7 +14,7 @@ const Slide2 = () => {
   const rightData = [
     { title: "SỞ THÍCH", text: "Chơi game, nghe nhạc và tìm hiểu các bài post về ngành IT", color: "#fff" },
     { title: "MỤC TIÊU", text: "Tự tay làm ra một con game chất lượng để thỏa mãn đam mê.", color: "#00d8ff" },
-    { title: "ƯỚC MƠ", text: "Mở studio riêng, phát triển mảng AI.", color: "#ff4d4d" }
+    { title: "ƯỚC MƠ", text: "Mở studio riêng có thể lấn qua các mảng khác như AI.", color: "#ff4d4d" }
   ];
 
   return (
@@ -111,7 +111,7 @@ const Slide2 = () => {
               ))}
             </motion.div>
 
-            <div style={{ position: 'absolute', bottom: '40px', width: '100%', textAlign: 'center', opacity: 0.25, fontSize: '11px', letterSpacing: '4px' }}>
+            <div style={{ position: 'absolute', bottom: '40px', width: '100%', textAlign: 'center', opacity: 1, fontSize: '12px', letterSpacing: '4px', color: '#777' }}>
               <TextType
                 text={["ĐẶC BIỆT: ĐÁNH SẬP CÔNG TY CỦA MỘT NGƯỜI NGẪU NHIÊN"]}
                 typingSpeed={20}

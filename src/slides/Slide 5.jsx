@@ -55,7 +55,7 @@ const Slide5 = () => {
         <div style={{ height: '2px', width: '200px', background: '#00d8ff', margin: '10px auto' }} />
         <h2 style={{ 
           fontFamily: '"JetBrains Mono", monospace', fontSize: '1rem', 
-          margin: 0, color: '#999', letterSpacing: '10px', textTransform: 'uppercase' 
+          margin: 0, color: '#999', letterSpacing: '5px', textTransform: 'uppercase' 
         }}>
           UNIVERSITY OF INFORMATION TECHNOLOGY
         </h2>
@@ -110,7 +110,7 @@ const Slide5 = () => {
               }}
             >
 
-              <span style={{ fontFamily: '"JetBrains Mono", monospace', fontSize: '0.8rem', color: '#888', letterSpacing: '2px' }}>
+              <span style={{ fontFamily: '"JetBrains Mono", monospace', fontSize: '1rem', color: '#888', letterSpacing: '2px' }}>
                 {item.label}
               </span>
               <div style={{ fontSize: '3rem', fontWeight: 'bold', fontFamily: '"JetBrains Mono", monospace', color: idx === 0 ? '#00d8ff' : '#fff' }}>

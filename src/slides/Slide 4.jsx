@@ -87,7 +87,7 @@ const Slide4= () => {
               
               <div style={{ zIndex: 1, display: 'flex', alignItems: 'center', gap: '15px' }}>
                 <div style={{ width: '8px', height: '8px', backgroundColor: '#00d8ff', transform: 'rotate(45deg)' }} />
-                <span style={{ color: '#aaa', fontFamily: '"JetBrains Mono", monospace', fontSize: '0.9rem', letterSpacing: '1px' }}>
+                <span style={{ color: '#aaa', fontFamily: '"JetBrains Mono", monospace', fontSize: '1.2rem', letterSpacing: '1px' }}>
                   ĐIỂM THI THPT
                 </span>
               </div>
@@ -101,7 +101,6 @@ const Slide4= () => {
               </span>
             </motion.div>
 
-            {/* Ô ĐIỂM SAT */}
             <motion.div
               variants={{ hidden: { x: -50, opacity: 0 }, visible: { x: 0, opacity: 1 } }}
               transition={{ delay: 0.8 }}
@@ -120,7 +119,7 @@ const Slide4= () => {
 
               <div style={{ zIndex: 1, display: 'flex', alignItems: 'center', gap: '15px' }}>
                 <div style={{ width: '8px', height: '8px', backgroundColor: '#fff', transform: 'rotate(45deg)' }} />
-                <span style={{ color: '#aaa', fontFamily: '"JetBrains Mono", monospace', fontSize: '0.9rem', letterSpacing: '1px' }}>
+                <span style={{ color: '#aaa', fontFamily: '"JetBrains Mono", monospace', fontSize: '1.2rem', letterSpacing: '1px' }}>
                   ĐIỂM SAT (DỰ KIẾN)
                 </span>
               </div>

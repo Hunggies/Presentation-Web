@@ -27,7 +27,6 @@ const Slide_6_Aspirations = () => {
       color: '#fff', overflow: 'hidden', fontFamily: '"monospace", sans-serif'
     }}>
       
-      {/* TIÊU ĐỀ TỔNG */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -41,7 +40,6 @@ const Slide_6_Aspirations = () => {
 
       <div style={{ display: 'flex', gap: '60px', flex: 1 }}>
         
-        {/* CỘT TRÁI: NGUYỆN VỌNG TRONG NƯỚC */}
         <div style={{ flex: 1 }}>
           <h3 style={{ fontFamily: 'monospace', fontSize: '1.2rem', color: '#555', marginBottom: '30px', letterSpacing: '2px' }}>
             NGUYỆN VỌNG TRONG NƯỚC
@@ -67,7 +65,6 @@ const Slide_6_Aspirations = () => {
           </div>
         </div>
 
-        {/* CỘT PHẢI: NGUYỆN VỌNG NƯỚC NGOÀI */}
         <div style={{ flex: 1 }}>
           <h3 style={{ fontFamily: 'monospace', fontSize: '1.2rem', color: '#555', marginBottom: '30px', letterSpacing: '2px' }}>
             NGUYỆN VỌNG NGOÀI NƯỚC
@@ -84,7 +81,6 @@ const Slide_6_Aspirations = () => {
                   textAlign: 'right', position: 'relative', overflow: 'hidden'
                 }}
               >
-                {/* Hiệu ứng gạch chân chạy */}
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={isInView ? { width: '100%' } : { width: 0 }}

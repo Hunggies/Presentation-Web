@@ -57,7 +57,7 @@ const Slide_4_Minimal_Dark = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
             
             <div style={{ position: 'relative' }}>
-              <div style={{ fontSize: '0.75rem', color: '#555', marginBottom: '10px', fontFamily: 'monospace' }}>[ 01. ĐIỂM XÉT TUYỂN ]</div>
+              <div style={{ fontSize: '1rem', color: '#777', marginBottom: '10px', fontFamily: 'monospace' }}>[ 01. ĐIỂM XÉT TUYỂN ]</div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '15px' }}>
                 <span style={{ fontSize: '4.5rem', fontWeight: 800, color: '#fff', lineHeight: 1 }}>
                   <CountingNumber value={85.41} delay={0.5} startTrigger={isInView} />
@@ -79,7 +79,7 @@ const Slide_4_Minimal_Dark = () => {
             </div>
 
             <div style={{ position: 'relative' }}>
-              <div style={{ fontSize: '0.75rem', color: '#555', marginBottom: '10px', fontFamily: 'monospace' }}>[ 02. ĐIỂM SAT ]</div>
+              <div style={{ fontSize: '1rem', color: '#777', marginBottom: '10px', fontFamily: 'monospace' }}>[ 02. ĐIỂM SAT ]</div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
                 <span style={{ fontSize: '2.5rem', fontWeight: 700, color: '#ddd' }}>
                   <CountingNumber value={1550} delay={0.8} startTrigger={isInView} />
